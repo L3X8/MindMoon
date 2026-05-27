@@ -1,4 +1,4 @@
-/* TEMA POR DEFECTO: Lavender / Orchid (Lila característico de Pixel) */
+
 :root, html[data-theme="lavender"] {
   --bg-main: #141218;
   --bg-card: #211f26;
@@ -18,7 +18,6 @@
   --danger: #f2b8b5;
 }
 
-/* TEMA 2: Mint / Botanical (Verde Menta) */
 html[data-theme="mint"] {
   --bg-main: #101411;
   --bg-card: #1c201d;
@@ -37,7 +36,7 @@ html[data-theme="mint"] {
   --text-muted: #c1c9c3;
 }
 
-/* TEMA 3: Ocean / Coastal (Azul Océano) */
+
 html[data-theme="ocean"] {
   --bg-main: #0f1318;
   --bg-card: #1b2027;
@@ -56,7 +55,6 @@ html[data-theme="ocean"] {
   --text-muted: #c4c6cf;
 }
 
-/* TEMA 4: Peach / Sunset (Avanzado Cálido) */
 html[data-theme="peach"] {
   --bg-main: #171211;
   --bg-card: #241e1c;
@@ -75,7 +73,6 @@ html[data-theme="peach"] {
   --text-muted: #d8c2be;
 }
 
-/* Estilo para la nueva botonera de temas */
 .theme-selector {
   display: flex;
   justify-content: center;
@@ -102,7 +99,7 @@ html[data-theme="peach"] {
   transform: scale(1.1);
 }
 
-/* Colores de los botones de muestra en el selector */
+
 .theme-dot[data-set-theme="lavender"] { background: #4f378b; }
 .theme-dot[data-set-theme="mint"] { background: #234e37; }
 .theme-dot[data-set-theme="ocean"] { background: #1b4973; }
@@ -120,19 +117,19 @@ body {
   line-height: 1.6;
   min-height: 100vh;
   position: relative;
-  /* Eliminamos los degradados circulares agresivos por una estética más limpia */
+  
 }
 
-/* HEADER & FOOTER (M3 App Bar) */
+
 header, footer {
-  /* En lugar de un color fijo, usamos la variable del contenedor */
+ 
   background: var(--bg-card); 
   
   padding: 1rem 1.5rem;
   text-align: center;
   border-bottom: 1px solid var(--border);
   
-  /* Transición suave para que cambie de color junto con el resto de la página */
+ 
   transition: background-color 0.3s ease, border-color 0.3s ease; 
 }
 
@@ -157,14 +154,14 @@ nav a:hover {
   color: var(--primary);
 }
 
-/* SECTIONS (M3 Cards) */
+
 section {
   margin: 2rem auto;
   padding: 1.5rem;
   max-width: 800px;
   background: var(--bg-card);
-  border-radius: 24px; /* Bordes más curvos estilo M3 */
-  border: none; /* Material You evita los bordes en tarjetas */
+  border-radius: 24px; 
+  border: none; 
   box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15), 0px 1px 2px 0px rgba(0, 0, 0, 0.3);
   transition: box-shadow 0.2s, transform 0.2s;
 }
@@ -204,7 +201,7 @@ button {
 }
 
 button:hover {
-  background-image: linear-gradient(rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.08)); /* State layer overlay */
+  background-image: linear-gradient(rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.08)); 
   box-shadow: 0 1px 3px rgba(0,0,0,0.4);
 }
 
@@ -221,7 +218,7 @@ button.secondary {
 }
 
 button.secondary:hover {
-  background: rgba(208, 188, 255, 0.08); /* Hover sutil con el color primario */
+  background: rgba(208, 188, 255, 0.08); 
   border-color: var(--primary);
 }
 
@@ -229,7 +226,7 @@ input, textarea {
   width: 100%;
   padding: 1rem;
   margin-top: 0.5rem;
-  border-radius: 4px 4px 0 0; /* Estilo clásico M3 'Filled' */
+  border-radius: 4px 4px 0 0; 
   border: none;
   border-bottom: 1px solid var(--border-variant);
   background: var(--bg-soft);
@@ -249,7 +246,7 @@ input:focus, textarea:focus {
   align-items: center;
   padding: 0.5rem 1rem;
   margin: 0.25rem;
-  border-radius: 8px; /* Los chips de Material 3 son más cuadrados (8px) */
+  border-radius: 8px; 
   background: var(--bg-soft);
   color: var(--text-main);
   font-size: 0.85rem;
@@ -265,7 +262,7 @@ input:focus, textarea:focus {
   border-color: transparent;
 }
 
-/* POSTS */
+
 .post {
   padding: 1.2rem;
   border-radius: 16px;
@@ -354,7 +351,7 @@ input:focus, textarea:focus {
   color: var(--on-primary-container);
 }
 
-/* TAGS GLOBALES (Contenedor de Chips de Filtro) */
+
 .tags-globales {
   display: flex;
   gap: 8px;
@@ -365,7 +362,7 @@ input:focus, textarea:focus {
   scrollbar-width: none;
 }
 
-/* CARGA Y ANIMACIONES (Se mantienen funcionales) */
+
 #logo {
   display: flex;
   justify-content: center;
@@ -467,7 +464,7 @@ input:focus, textarea:focus {
     display: grid;
 
     grid-template-columns: repeat(2, 1fr); 
-    gap: 20px; /* Un poco más de espacio en PC */
+    gap: 20px; 
   }
   
 
