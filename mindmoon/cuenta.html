@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MindMoon</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="logo.webp" type="image/x-icon">
+</head>
+
+<body>
+
+<header>
+  <nav class="nav">
+    <img src="logo.webp" width="50px" alt="">
+    <h1 class="logo">MindMoon</h1>
+    <ul>
+      <li><a href="index.html">Comunidad</a></li>
+      <li><a href="#formulario">Compartir</a></li>
+      <li><a href="anecdota.html">Anecdotas</a></li>
+      <li><a href="cuenta.html">Cuenta</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section>
+    <p>Selector de temas</p>
+    <div class="theme-selector">
+  <button class="theme-dot active" data-set-theme="lavender" title="Tema Lavanda"></button>
+  <button class="theme-dot" data-set-theme="mint" title="Tema Menta"></button>
+  <button class="theme-dot" data-set-theme="ocean" title="Tema Océano"></button>
+  <button class="theme-dot" data-set-theme="peach" title="Tema Melocotón"></button>
+</div>
+  </section>
+  
+    <section id="reflexion">
+        <div class="section-header">
+        <h2>Tu cuenta</h2>
+        <p class="muted">Pronto podrás ver tus ajustes aquí.</p>
+        </div>
+    
+        <form class="form-card">
+        <label>Nombre de usuario</label>
+        <input type="text" placeholder="Ej: @usuario123">
+    
+        <label>Correo electrónico</label>
+        <input type="email" placeholder="Ej: tuemail@dominio.com">
+      </form>
+    </section>
+  <section>
+    <p> pronto estara disponible</p>
+  </section>
+</main>
+
+<footer>
+  <p>🌙 MindMoon - Comunidad anónima y segura</p>
+  <p class="muted">
+    "No estás aquí para tener razón. Estás aquí para ayudar o ser ayudado."
+  </p>
+</footer>
+<script type="module" src="temas.js"></script>
+</body>
+</html>

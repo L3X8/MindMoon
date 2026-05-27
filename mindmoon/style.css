@@ -1,0 +1,479 @@
+/* TEMA POR DEFECTO: Lavender / Orchid (Lila característico de Pixel) */
+:root, html[data-theme="lavender"] {
+  --bg-main: #141218;
+  --bg-card: #211f26;
+  --bg-soft: #2b2930;
+  --bg-soft-hover: #36343b;
+  --primary: #d0bcff;
+  --on-primary: #381e72;
+  --primary-container: #4f378b;
+  --on-primary-container: #eaddff;
+  --secondary-container: #4a4458;
+  --on-secondary-container: #e8def8;
+  --accent: #bbc7db;
+  --border: #49454f;
+  --border-variant: #938f99;
+  --text-main: #e6e1e5;
+  --text-muted: #cac4d0;
+  --danger: #f2b8b5;
+}
+
+/* TEMA 2: Mint / Botanical (Verde Menta) */
+html[data-theme="mint"] {
+  --bg-main: #101411;
+  --bg-card: #1c201d;
+  --bg-soft: #272b27;
+  --bg-soft-hover: #323632;
+  --primary: #a3d3b2;
+  --on-primary: #0a3722;
+  --primary-container: #234e37;
+  --on-primary-container: #bfe0cc;
+  --secondary-container: #3d4940;
+  --on-secondary-container: #dce5dd;
+  --accent: #b0cbd0;
+  --border: #414943;
+  --border-variant: #8b938d;
+  --text-main: #e1e3e0;
+  --text-muted: #c1c9c3;
+}
+
+/* TEMA 3: Ocean / Coastal (Azul Océano) */
+html[data-theme="ocean"] {
+  --bg-main: #0f1318;
+  --bg-card: #1b2027;
+  --bg-soft: #262b32;
+  --bg-soft-hover: #31363e;
+  --primary: #a1cafd;
+  --on-primary: #00325b;
+  --primary-container: #1b4973;
+  --on-primary-container: #d2e4ff;
+  --secondary-container: #3c4753;
+  --on-secondary-container: #d7e3f2;
+  --accent: #bac8db;
+  --border: #404750;
+  --border-variant: #8a919e;
+  --text-main: #e2e2e6;
+  --text-muted: #c4c6cf;
+}
+
+/* TEMA 4: Peach / Sunset (Avanzado Cálido) */
+html[data-theme="peach"] {
+  --bg-main: #171211;
+  --bg-card: #241e1c;
+  --bg-soft: #302927;
+  --bg-soft-hover: #3b3331;
+  --primary: #ffb5a0;
+  --on-primary: #561f10;
+  --primary-container: #733524;
+  --on-primary-container: #ffdad2;
+  --secondary-container: #53433f;
+  --on-secondary-container: #f5ded8;
+  --accent: #e6bebc;
+  --border: #534340;
+  --border-variant: #a08c88;
+  --text-main: #f0dfdb;
+  --text-muted: #d8c2be;
+}
+
+/* Estilo para la nueva botonera de temas */
+.theme-selector {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.theme-dot {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: transform 0.2s, border-color 0.2s;
+  position: relative;
+}
+
+.theme-dot:hover {
+  transform: scale(1.15);
+}
+
+.theme-dot.active {
+  border-color: #ffffff;
+  transform: scale(1.1);
+}
+
+/* Colores de los botones de muestra en el selector */
+.theme-dot[data-set-theme="lavender"] { background: #4f378b; }
+.theme-dot[data-set-theme="mint"] { background: #234e37; }
+.theme-dot[data-set-theme="ocean"] { background: #1b4973; }
+.theme-dot[data-set-theme="peach"] { background: #733524; }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", "Inter", sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  line-height: 1.6;
+  min-height: 100vh;
+  position: relative;
+  /* Eliminamos los degradados circulares agresivos por una estética más limpia */
+}
+
+/* HEADER & FOOTER (M3 App Bar) */
+header, footer {
+  /* En lugar de un color fijo, usamos la variable del contenedor */
+  background: var(--bg-card); 
+  
+  padding: 1rem 1.5rem;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+  
+  /* Transición suave para que cambie de color junto con el resto de la página */
+  transition: background-color 0.3s ease, border-color 0.3s ease; 
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+nav a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+nav a:hover {
+  background-color: var(--bg-soft);
+  color: var(--primary);
+}
+
+/* SECTIONS (M3 Cards) */
+section {
+  margin: 2rem auto;
+  padding: 1.5rem;
+  max-width: 800px;
+  background: var(--bg-card);
+  border-radius: 24px; /* Bordes más curvos estilo M3 */
+  border: none; /* Material You evita los bordes en tarjetas */
+  box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15), 0px 1px 2px 0px rgba(0, 0, 0, 0.3);
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+
+h1, h2, h3 {
+  font-weight: 400;
+  letter-spacing: 0px;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  color: var(--text-muted);
+}
+
+
+button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+  
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: 500;
+  
+
+  background: var(--secondary-container);
+  color: var(--on-secondary-container);
+  border: none;
+  
+  padding: 0.6rem 1.5rem;
+  margin: 0.25rem;
+  border-radius: 100px; 
+  cursor: pointer;
+  transition: box-shadow 0.2s, background-color 0.2s;
+}
+
+button:hover {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.08)); /* State layer overlay */
+  box-shadow: 0 1px 3px rgba(0,0,0,0.4);
+}
+
+
+button.primary-m3 {
+  background: var(--primary);
+  color: var(--on-primary);
+}
+
+button.secondary {
+  background: transparent;
+  color: var(--primary);
+  border: 1px solid var(--border);
+}
+
+button.secondary:hover {
+  background: rgba(208, 188, 255, 0.08); /* Hover sutil con el color primario */
+  border-color: var(--primary);
+}
+
+input, textarea {
+  width: 100%;
+  padding: 1rem;
+  margin-top: 0.5rem;
+  border-radius: 4px 4px 0 0; /* Estilo clásico M3 'Filled' */
+  border: none;
+  border-bottom: 1px solid var(--border-variant);
+  background: var(--bg-soft);
+  color: var(--text-main);
+  outline: none;
+  transition: border-bottom 0.2s;
+}
+
+input:focus, textarea:focus {
+  border-bottom: 2px solid var(--primary);
+  background: var(--bg-soft-hover);
+}
+
+
+.tag, .tag-filtro {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  margin: 0.25rem;
+  border-radius: 8px; /* Los chips de Material 3 son más cuadrados (8px) */
+  background: var(--bg-soft);
+  color: var(--text-main);
+  font-size: 0.85rem;
+  font-weight: 500;
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.tag-filtro:hover, .tag-filtro.active {
+  background: var(--primary-container);
+  color: var(--on-primary-container);
+  border-color: transparent;
+}
+
+/* POSTS */
+.post {
+  padding: 1.2rem;
+  border-radius: 16px;
+  background: var(--bg-soft);
+  border: none;
+  margin-bottom: 1rem;
+  transition: background-color 0.2s;
+}
+
+
+
+.muted {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+
+.comentarios-section {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+
+.comentario-item {
+  background: var(--bg-card);
+  padding: 0.8rem 1rem;
+  border-radius: 12px;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  border: none; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.comentario-item .user {
+  color: var(--primary);
+  font-weight: 500;
+  margin-right: 0.5rem;
+}
+
+.form-comentario {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.form-comentario input {
+  margin-top: 0; 
+  flex-grow: 1;
+  border-radius: 12px; 
+  border: 1px solid var(--border);
+}
+.form-comentario input:focus {
+  border: 2px solid var(--primary);
+}
+
+.btn-relevancia, .btn-like-comentario {
+  background: var(--bg-soft);
+  color: var(--text-main);
+  border: 1px solid var(--border);
+}
+
+.btn-relevancia:hover, .btn-like-comentario:hover {
+  background: var(--bg-soft-hover);
+}
+
+.btn-relevancia.liked, .btn-like-comentario.liked {
+  background: var(--primary-container);
+  color: var(--on-primary-container);
+  border-color: transparent;
+  opacity: 1;
+}
+
+.emocion-btn {
+  background: var(--bg-soft);
+  color: var(--text-main);
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  padding: 0.5rem 1rem;
+}
+
+.emocion-btn:hover {
+  background: var(--primary-container);
+  color: var(--on-primary-container);
+}
+
+/* TAGS GLOBALES (Contenedor de Chips de Filtro) */
+.tags-globales {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  justify-content: center;
+  scrollbar-width: none;
+}
+
+/* CARGA Y ANIMACIONES (Se mantienen funcionales) */
+#logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#carga {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: var(--bg-main);
+  z-index: 10;
+  opacity: 1;
+  pointer-events: none;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  transition: 0.5s ease;
+}
+
+#carga.active {
+  opacity: 0;
+  transform: scale(20);
+}
+
+.lds-heart {
+  color: var(--danger);
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+  transform: rotate(45deg);
+  transform-origin: 40px 40px;
+}
+
+.lds-heart div {
+  top: 28px; left: 28px; position: absolute; width: 32px; height: 32px;
+  background: currentColor; animation: lds-heart 1.2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.lds-heart div:after, .lds-heart div:before { content: " "; position: absolute; display: block; width: 32px; height: 32px; background: currentColor; }
+.lds-heart div:before { left: -24px; border-radius: 50% 0 0 50%; }
+.lds-heart div:after { top: -24px; border-radius: 50% 50% 0 0; }
+@keyframes lds-heart {
+  0% { transform: scale(0.95); }
+  5% { transform: scale(1.1); }
+  39% { transform: scale(0.85); }
+  45% { transform: scale(1); }
+  60% { transform: scale(0.95); }
+  100% { transform: scale(0.9); }
+}
+
+@media (max-width: 768px) {
+  section {
+    margin: 1rem; 
+    padding: 1.2rem;
+    border-radius: 16px;
+  }
+
+  nav ul {
+    gap: 0.5rem; 
+    flex-wrap: wrap; 
+  }
+
+  nav a {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+  }
+
+
+  .form-comentario {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .form-comentario button {
+    width: 100%; 
+    padding: 0.8rem;
+  }
+}
+
+.contenedor-posts {
+  display: flex;
+  flex-direction: column;
+  gap: 16px; 
+  margin-top: 1rem;
+}
+
+.contenedor-posts .post {
+  margin-bottom: 0; 
+  width: 100%;
+}
+
+
+@media (min-width: 768px) {
+  .contenedor-posts {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 20px; /* Un poco más de espacio en PC */
+  }
+  
+
+  section {
+    max-width: 900px; 
+  }
+}
+
+

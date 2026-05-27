@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MindMoon</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="logo.webp" type="image/x-icon">
+</head>
+
+<body>
+
+<header>
+  <nav class="nav">
+    <img src="logo.webp" width="50px" alt="">
+    <h1 class="logo">MindMoon</h1>
+    <ul>
+      <li><a href="index.html">Comunidad</a></li>
+      <li><a href="#formulario">Compartir</a></li>
+      <li><a href="anecdota.html">Anecdotas</a></li>
+        <li><a href="cuenta.html">Cuenta</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section id="reflexion">
+    <div class="section-header">
+      <h2>Comparte un anécdota</h2>
+      <p class="muted">Aprende de lo que vives.</p>
+    </div>
+
+    <form class="form-card">
+      <label>Añade un titulo</label>
+      <input type="text" placeholder="Ej: Mi experiencia con la ansiedad...">
+
+      <label>¿Qué paso?</label>
+      <textarea placeholder="Escribe tu anécdota..."></textarea>
+
+      <button type="submit">Guardar anécdota</button>
+    </form>
+    <div id="lista-anecdotas"></div>
+  </section>
+  <section>
+    <p>Anecdotas pronto estara disponible</p>
+  </section>
+</main>
+
+<footer>
+  <p>🌙 MindMoon - Comunidad anónima y segura</p>
+  <p class="muted">
+    "No estás aquí para tener razón. Estás aquí para ayudar o ser ayudado."
+  </p>
+</footer>
+<script type="module" src="anecdota.js"></script>
+<script src="temas.js"></script>
+</body>
+</html>

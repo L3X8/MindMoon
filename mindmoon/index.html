@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MindMoon</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="logo.webp" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<div id="carga">
+      
+      <img src="/logo.webp" width="100px" alt="">
+      <h1 style="font-size: 30px;">Mindmoon</h1>
+     
+      <div id="loader">
+    
+    </div>
+    
+    <p>©2026 Merux</p>
+     </div>
+<header>
+  <nav class="nav">
+    <img src="logo.webp" width="50px" alt="">
+    <h1 class="logo"> <strong>MindMoon</strong></h1>
+    <ul>
+      <li><a href="#feed">Comunidad</a></li>
+      <li><a href="#formulario">Compartir</a></li>
+            <li><a href="anecdota.html">Anecdotas</a></li>
+              <li><a href="cuenta.html">Cuenta</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+<div id="tags-globales" class="tags-globales"></div>
+
+  <section id="feed"></section>
+
+
+
+  <section id="feed">
+    <div class="section-header">
+      <h2>Publicaciones recientes</h2>
+      <p class="muted">No estás solo. Otros también están luchando.</p>
+    </div>
+
+    <article class="post">
+      <div class="lds-heart"><div></div></div>
+    </article>
+
+  </section>
+
+<section id="formulario">
+    <div class="section-header">
+      <h2>Comparte tu experiencia</h2>
+      <p class="muted">Aquí puedes decir lo que normalmente te guardas.</p>
+    </div>
+
+    <form class="form-card">
+      <label for="texto">Tu mensaje</label>
+      <textarea id="texto" placeholder="Escribe lo que sientes..." required></textarea>
+
+      <label for="tags">Etiquetas</label>
+      <input type="text" id="tags" placeholder="#ansiedad #dinero">
+
+      <div class="form-actions">
+        <button type="submit">Publicar</button>
+        <button type="button" class="secondary">Cancelar</button>
+      </div>
+    </form>
+  </section>
+
+</main>
+
+<footer>
+  <p>🌙 MindMoon - Comunidad anónima y segura</p>
+  <p class="muted">
+    "No estás aquí para tener razón. Estás aquí para ayudar o ser ayudado."
+  </p>
+</footer>
+<script type="module" src="app.js"></script>
+<script src="temas.js"></script>
+</body>
+</html>
